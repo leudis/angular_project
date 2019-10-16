@@ -1,0 +1,10 @@
+<p>listado works!</p>
+{{listado_array}}
+
+<ul>
+<li *ngFor='let x of datos'>{{x.id}} - {{x.nombre}} - {{x.direccion}} - {{x.telefono}}</li>
+</ul>
+
+<button (click)="desplegarMensaje()">listado hijo Click aqui!</button>
+
+<button (click)="invocar_padre_listado()">invocar a padre listado</button>
