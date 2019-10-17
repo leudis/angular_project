@@ -5,6 +5,15 @@
 <li *ngFor='let x of datos'>{{x.id}} - {{x.nombre}} - {{x.direccion}} - {{x.telefono}}</li>
 </ul>
 
-<button (click)="desplegarMensaje()">listado hijo Click aqui!</button>
+<button (click)="desplegarMensaje()">mostrar/ocultar listado de hijo</button>
 
-<button (click)="invocar_padre_listado()">invocar a padre listado</button>
+<button (click)="invocar_padre_listado()">invocar a padre listado con funcion</button>
+<button routerLink="/parent">invocar a padre listado con routerLink</button>
+
+<div *ngIf="mensaje_show">
+    <p class="msg_div">esto es un div mensage</p>
+</div>
+<button (click)="mostrar_mensaje()">
+{{ mensaje_show == true ? 'ocultar' : 'mostrar' }} mensaje
+</button>
+

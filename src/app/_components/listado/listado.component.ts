@@ -10,8 +10,11 @@ export class ListadoComponent implements OnInit {
   listado_array = [1,2,3,4];
   datos: any[];
   show: boolean;
+  mensaje_show: boolean;
+
   constructor(private router: Router) {
     this.show = true;
+    this.mensaje_show = true;
   }
 
   ngOnInit() {
@@ -32,6 +35,10 @@ export class ListadoComponent implements OnInit {
 
   invocar_padre_listado(){
     this.router.navigate(['parent']);
+  }
+
+  mostrar_mensaje(){
+    this.mensaje_show = !this.mensaje_show;
   }
 
 }
