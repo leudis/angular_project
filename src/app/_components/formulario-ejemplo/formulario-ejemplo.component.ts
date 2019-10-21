@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var NgForm:any;
 @Component({
   selector: 'app-formulario-ejemplo',
   templateUrl: './formulario-ejemplo.component.html',
@@ -11,7 +11,8 @@ export class FormularioEjemploComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  public user = {};
   signup(){
     alert('form fields are validated successfully!');
   }

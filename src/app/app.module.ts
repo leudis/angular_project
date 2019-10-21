@@ -26,10 +26,10 @@ import { FormsModule }   from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule, // for use HttpClient on _service
-    NgbModule.forRoot(),
-    FormsModule
+    NgbModule.forRoot()
   ],
   providers: [DatosService],
   bootstrap: [AppComponent]
