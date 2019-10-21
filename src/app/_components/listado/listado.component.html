@@ -1,19 +1,60 @@
-<p>listado works!</p>
+<h2 class="text-center">Listado</h2>
+
 {{listado_array}}
 
-<ul>
-<li *ngFor='let x of datos'>{{x.id}} - {{x.nombre}} - {{x.direccion}} - {{x.telefono}}</li>
+<ul class="list-group">
+        <li *ngFor="let persona of datos" class="list-group-item">{{persona.id}} - {{persona.nombre}} - {{persona.direccion}} - {{persona.telefono}}</li>
 </ul>
 
-<button (click)="desplegarMensaje()">mostrar/ocultar listado de hijo</button>
 
-<button (click)="invocar_padre_listado()">invocar a padre listado con funcion</button>
-<button routerLink="/parent">invocar a padre listado con routerLink</button>
+    <div class="row justify-content-center py-5">
+            <div class="btn-group self-btn-group" role="group" aria-label="Basic example">
+                    <button (click)="listadoNombres()" type="button" class="btn btn-secondary">mostrar/ocultar listado de Personas</button>
+                    <button (click)="invocar_padre_listado()" type="button" class="btn btn-secondary">invocar a padre listado con funcion</button>
+                    <button routerLink="/parent" type="button" class="btn btn-secondary">invocar a padre listado con routerLink</button>
+            </div>
+    </div>
+
+
 
 <div *ngIf="mensaje_show">
-    <p class="msg_div">esto es un div mensage</p>
+    <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div>
 </div>
-<button (click)="mostrar_mensaje()">
-{{ mensaje_show == true ? 'ocultar' : 'mostrar' }} mensaje
-</button>
+
+<div class="row justify-content-center py-2">
+        <div class="btn-group self-btn-group" role="group" aria-label="Basic example">
+                <button (click)="mostrar_mensaje()" type="button" class="btn btn-secondary">{{ mensaje_show == true ? 'ocultar' : 'mostrar' }} jumbotron</button>
+                <button (click)="libro_titulos('')" type="button" class="btn btn-secondary">muestra titulos por Consola</button>
+                <button (click)="libro_detallado('')" type="button" class="btn btn-secondary">Libro Detallado</button>
+        </div>
+</div>
+
+<div *ngIf="result">
+        <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">UserID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Completado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let libro of result">
+                    <th scope="row">{{libro.id}}</th>
+                    <td>{{libro.userId}}</td>
+                    <td>{{libro.title}}</td>
+                    <td>{{libro.completed}}</td>
+                  </tr>
+                </tbody>
+              </table> 
+</div>
+
+
 

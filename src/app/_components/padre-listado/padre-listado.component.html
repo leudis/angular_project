@@ -1,10 +1,28 @@
 <div class="padre-listado">
     <p>padre-listado works!</p>
-    <button (click)="invocar()">Padre listado Click aqui! invocar()</button>
+    <button class="btn btn-info" (click)="invocar()">ir a listado con: invocar()</button>
     
     <h3>ruta listado</h3>
 
-    <button routerLink='/listado'>Detalles listado</button>
+    <button class="btn btn-info" routerLink='/listado'>ir a listado con routerLink</button>
 
 </div>
+
+    <form class="self-form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" pattern="^([a-z\d]+[.-]{0,1}){1,}[a-z\d]+@{1}([a-z\d]+[-]{0,1}){1,}[a-z\d]{1,}\.{1}([a-z]{2,3}|[a-z]{3}\.[a-z]{2}){1}$" title="Introduzca un correo electrónico válido">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form> 
+
+    <app-formulario-ejemplo></app-formulario-ejemplo>
+
+
 
