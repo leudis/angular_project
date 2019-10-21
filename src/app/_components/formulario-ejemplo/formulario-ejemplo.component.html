@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row mt-5">
   <div class="col-md-4 offset-md-4">
     <form name="signup_form" (ngSubmit)="fs.form.valid && signup(fs);" #fs="ngForm" novalidate>
       <div class="formbox">
         <div class="form-group">
-          <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Full Name" name="fullname"
+          <input type="text" class="form-control" name="fullName" id="fullName" placeholder="Full Name"
             [(ngModel)]="user.fullName" minlength="6" #fullName="ngModel" required pattern="^[A-Za-z ]+$"
             [ngClass]="{ 'is-invalid': fs.submitted && fullName.invalid }" />
           <div *ngIf="fs.submitted && fullName.invalid" class="invalid-feedback">
