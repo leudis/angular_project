@@ -12,10 +12,12 @@ multi: true
  
 export class ConfirmEqualValidatorDirective implements Validator {
 @Input() appConfirmEqualValidator: string;
- 
+
 validate(control: AbstractControl):{[key:string]: any} |null {
 const controlToCompare = control.parent.get(this.appConfirmEqualValidator);
-if(controlToCompare && controlToCompare.value !==control.value){
+console.dir(controlToCompare.value);
+console.dir(control.value);
+if(controlToCompare && controlToCompare.value !== control.value){
 return { 'notEqual': true}
 }
 return null;

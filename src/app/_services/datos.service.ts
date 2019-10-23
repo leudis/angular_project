@@ -9,7 +9,7 @@ export class DatosService {
 
   constructor(public http: HttpClient) { }
 
-  libro(ciudad: string) : Observable<any>{ //aqui, en lugar de &lt;any&gt; se puede indicar una clase
+  libro(ciudad: string) : Observable<any>{//aqui, en lugar de <any> se puede indicar una clase
 
     let url = "https://jsonplaceholder.typicode.com/todos";
     return this.http.get<any>(url, { observe: 'response' });

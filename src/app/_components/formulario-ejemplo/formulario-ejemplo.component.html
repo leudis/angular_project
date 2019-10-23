@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+          <input type="password" class="form-control" name="password" id="password2" placeholder="Password"
             [(ngModel)]="user.password" #password="ngModel"
             [ngClass]="{ 'is-invalid': fs.submitted && password.invalid}" required />
           <div *ngIf="fs.submitted && password.invalid" class="invalid-feedback">
@@ -66,6 +66,23 @@
           <button type="submit" class="btn btn-primary signin">Sign Up <span class="arrowbtn"><span
                 class="fa fa-arrow-right"></span></span></button>
         </div>
+        
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select [(ngModel)]="option_selected" name="select2" class="form-control" id="exampleFormControlSelect1" required>
+            <option *ngFor="let oneOption of OptionList" [ngValue]="oneOption.num">{{oneOption.name}}</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text bg-danger" [ngClass]="{'bg-success': option_selected !== 0, 'bg-danger': option_selected === 0}" id="inputGroupPrepend2">@</span>
+              </div>
+              <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+            </div>
+
+          <div><p> aqui: {{option_selected}}</p></div>
+
       </div>
     </form>
   </div>
