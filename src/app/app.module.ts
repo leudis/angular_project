@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,10 @@ import { NavbarComponent } from './_components/navbar/navbar.component';
 import { FormularioEjemploComponent } from './_components/formulario-ejemplo/formulario-ejemplo.component'
 import { ConfirmEqualValidatorDirective } from './_directives/confirm-equal-validator.directive';
 import { FormsModule } from '@angular/forms';
-
+import { ListItemComponent } from './_components/list-item/list-item.component';
+import { ItemComponent } from './_components/item/item.component';
+import { AngDataGridComponent } from './_components/ang-data-grid/ang-data-grid.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -23,16 +26,21 @@ import { FormsModule } from '@angular/forms';
     ListadoComponent,
     NavbarComponent,
     FormularioEjemploComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    ListItemComponent,
+    ItemComponent,
+    AngDataGridComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule, // for use HttpClient on _service
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AgGridModule.withComponents([])
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DatosService, TimeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

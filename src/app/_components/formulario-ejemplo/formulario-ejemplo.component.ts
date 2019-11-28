@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-formulario-ejemplo',
   templateUrl: './formulario-ejemplo.component.html',

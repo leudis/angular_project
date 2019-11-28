@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimeService } from '../../_services/time.service';
 
-import { timer, from } from 'rxjs';
+import { timer, from, Observable} from 'rxjs';
 import { take, filter, map, shareReplay, pluck} from 'rxjs/operators';
 
 @Component({
@@ -12,19 +12,15 @@ import { take, filter, map, shareReplay, pluck} from 'rxjs/operators';
 export class NavbarComponent implements OnInit {
   date: any;
   counter: any;
+  example: Observable<string>;
 
   constructor(private time_service: TimeService) { 
     const tmr = timer(0, 1000);
-    const subscripted_counter = tmr.pipe(take(21), filter(this.filter_divisible),map(this.custom_map)).subscribe(val => {
+    const subscripted_counter = tmr.pipe(take(41), filter(this.filter_divisible),map(this.custom_map)).subscribe(val => {
       //set timer value to counter
       this.counter = val;
     });
 
-    ////const source = from([{ name: 'Joe', age: 30 }, { name: 'Sarah', age: 35 }]);
-    //grab names
-    ////const example = source.pipe(pluck('name'));
-    //output: "Joe", "Sarah"
-    ////const subscribe = example.subscribe(val => console.log(val));
 
   }
 
@@ -42,6 +38,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    const source = from([{ name: 'Joe', age: 30 }, { name: 'Sarah', age: 35 }]);
+    this.example = source.pipe(pluck('name'));
+    const subscribe = this.example.subscribe(val => console.log(val));
   }
 
   time(){
