@@ -18,6 +18,7 @@ import { ListItemComponent } from './_components/list-item/list-item.component';
 import { ItemComponent } from './_components/item/item.component';
 import { AngDataGridComponent } from './_components/ang-data-grid/ang-data-grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { SyncfusionModule } from './syncfusion/syncfusion.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AgGridModule } from 'ag-grid-angular';
     AppRoutingModule,
     HttpClientModule, // for use HttpClient on _service
     NgbModule.forRoot(),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    SyncfusionModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [DatosService, TimeService],
